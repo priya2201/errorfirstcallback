@@ -1,0 +1,11 @@
+console.log('task start');
+function asyncTask(cb){
+    console.log('task running');
+    setTimeout(cb,0);
+}
+asyncTask(()=> console.log(name));
+console.log('task end');
+const name='pia';
+
+//callbacks are syncronous we make async with the help of settimeout 
+//please note all these points

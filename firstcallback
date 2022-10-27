@@ -1,0 +1,19 @@
+let cb1=function (err,data){
+    if(err) 
+    {return 'Failed'
+}
+    else
+    {
+        
+        return 'Get data of success '+ data
+    }
+}
+let use=function (num,cb){
+    if(num<10){
+        return cb("Smaller than 10")
+    }
+    else{
+    return cb (null,num)
+}
+}
+console.log(use(11,cb1));

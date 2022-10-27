@@ -1,0 +1,26 @@
+function somefunc(someval,cb){
+  let err=null;
+  if(typeof someval==='string'){
+  someval=someval.replace('hello','Howwdy')
+  }
+  else{
+    err=new TypeError('No string Provided');
+    err.typeProvided = typeof someval;
+  }
+  cb(err,someval);
+}
+try{
+    somefunc('hello world',(err,response)=>{
+       if (err) throw err; 
+       console.log('SUCESS',response)
+    });
+    somefunc(true,(err,response)=>{
+        if (err) throw err; 
+        console.log('SUCESS',response)
+     });
+ 
+}catch(err){
+    let msg=err.name + '\n' +err.message + '\n';
+    msg =msg.concat(err.typeProvided,' sent Instead')
+console.warn(msg)
+}
